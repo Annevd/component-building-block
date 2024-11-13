@@ -91,24 +91,31 @@ textarea {
     padding: 0.5rem;
     border-radius: var(--border-card);
     outline: none;
-    box-shadow: 0px 2px 4px hsl(32 37% 39% / 1);
+    /* box-shadow: 0px 2px 4px hsl(32 37% 39% / 1); */
+    outline: 1px solid #B37400;
 }
 
 input[type='submit'] {
     border-radius: 2rem;
     border: none;
-    cursor: pointer;
+    cursor: not-allowed;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     font-size: 1rem;
     width: 8rem;
-    background-color: var(--main-color-green);
+    background-color: #657266;
     color: var(--text-color-white);
     transition: ease-in 0.1s;
 }
 
-input[type='submit']:hover {
+form:valid input[type='submit'] {
+    cursor: pointer;
+    background: var(--main-color-green);
+}
+
+form:valid input[type='submit']:hover {
     background-color: #4A8235;
+    transform: scale(1.02);
 }
 
 input,
@@ -120,12 +127,29 @@ textarea {
     color: #545454;
 }
 
+/* form focus valid  */
+
+input[type='text']:valid,
+input[type='email']:valid,
+textarea:valid {
+    outline: 2px solid var(--card-color-green);
+    background: #E8FFE8;
+}
+
+input[type='text']:user-invalid,
+input[type='email']:user-invalid,
+textarea:user-invalid {
+    outline: 2px solid var(--invalid-color-red);
+    /* background: #FFEFEF; */
+}
+
 /* form focus styling */
 
 input[type='text']:focus,
 input[type='email']:focus,
 textarea:focus {
-    outline: 3px solid rgb(0, 0, 0, .6);
+    outline: 2px solid #B37400;
+    background: lightgoldenrodyellow;
 }
 
 </style>
