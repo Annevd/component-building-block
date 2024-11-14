@@ -56,7 +56,7 @@
         <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht" required></textarea>
     </fieldset>
 
-    <input type="submit" value="Verzenden" class="{isLoading ? 'loading' : ''}"/>
+    <input type="submit" value="Verzenden" aria-label="Verzend formulier" class="{isLoading ? 'loading' : ''}"/>
 
 </form>
 
