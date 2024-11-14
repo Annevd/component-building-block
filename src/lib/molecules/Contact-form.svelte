@@ -10,19 +10,24 @@
     </fieldset>
 
     <fieldset>
-        <label for="name">Voornaam:</label>
-        <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
+        <p>
+            <label for="name">Voornaam:</label>
+            <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
+        </p>
 
-        <label for="lastname">Achternaam:</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required/>
+        <p>
+            <label for="lastname">Achternaam:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required/>
+        </p>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required/>
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required/>
+        </p>
 
         <label for="message">
             Stel je vraag of vertel voor welke workshop je je wilt aanmelden!
         </label>
-
         <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht" required></textarea>
     </fieldset>
 
@@ -47,6 +52,7 @@ fieldset {
     flex-direction: column;
     border: none;
     gap: 0.5rem;
+    /* position: relative; */
 }
 
 legend {
@@ -93,6 +99,8 @@ textarea {
     outline: none;
     /* box-shadow: 0px 2px 4px hsl(32 37% 39% / 1); */
     outline: 1px solid #B37400;
+    position: relative;
+    z-index: 100;
 }
 
 input[type='submit'] {
@@ -102,7 +110,7 @@ input[type='submit'] {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     font-size: 1rem;
-    width: 8rem;
+    width: fit-content;
     background-color: #657266;
     color: var(--text-color-white);
     transition: ease-in 0.1s;
@@ -136,6 +144,8 @@ textarea:valid {
     background: #E8FFE8;
 }
 
+/* form focus invalid */
+
 input[type='text']:user-invalid,
 input[type='email']:user-invalid,
 textarea:user-invalid {
@@ -150,6 +160,63 @@ input[type='email']:focus,
 textarea:focus {
     outline: 2px solid #B37400;
     background: lightgoldenrodyellow;
+}
+
+/* Form animated valid styling */
+
+input[type='text']::after,
+input[type='email']::after,
+textarea::after {
+    /* content: "🌱"; */
+    content: "";
+    position: absolute;
+    top: -1rem; /* Adjust to where you want the icon */
+    right: 10px; /* Adjust based on layout */
+    width: 35px;
+    height: 35px;
+    background-image: url('/src/lib/assets/plant.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 10;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+fieldset p::after {
+    content: "";
+    position: absolute;
+    top: -0.15rem; /* Adjust to where you want the icon */
+    right: 10px; /* Adjust based on layout */
+    width: 40px;
+    height: 40px;
+    scale: 0.5;
+    background-image: url('/src/lib/assets/plant.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(.75,-0.5,0,1.75);
+}
+
+fieldset p:has(input:valid)::after {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+}
+
+fieldset p:has(input:focus)::after,
+fieldset p:has(input:focus:valid)::after {
+    transform: translateY(20%);
+    opacity:1;
+    scale: 1;
+    transition-delay: .3s;
 }
 
 </style>
