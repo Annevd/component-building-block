@@ -1,25 +1,29 @@
 <script>
     import { onMount } from "svelte";
+    let isLoading = false;
 
     onMount(() => {
         document.querySelector("form").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the default form submission
 
+            isLoading = true;
+
             setTimeout(() => {
                 const submitButton = document.querySelector("input[type='submit']");
                 document.querySelector("input[type='submit']").value = "Verzenden gelukt!"; // Change the button text
+                isLoading = false; 
+
                 submitButton.disabled = true; 
-                
                 submitButton.style.backgroundColor = "var(--main-color-green)";
                 submitButton.style.color = "white";
 
                 document.querySelector("form").reset();
-            }, 1000);
+            }, 2000);
         });
     });
 </script>
 
-<form>
+<form class="{isLoading ? 'loading-overlay' : ''}">
 
     <fieldset class="questions">
         <legend>Reden voor contact:</legend>
@@ -52,7 +56,7 @@
         <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht" required></textarea>
     </fieldset>
 
-    <input type="submit" value="Verzenden"/>
+    <input type="submit" value="Verzenden" class="{isLoading ? 'loading' : ''}"/>
 
 </form>
 
@@ -135,6 +139,26 @@ input[type='submit'] {
     background-color: #657266;
     color: var(--text-color-white);
     transition: ease-in 0.1s;
+}
+
+input[type='submit'].loading {
+    animation: pulse 0.8s infinite;
+    cursor: wait; 
+}
+
+.loading-overlay {
+    position: relative;
+}
+
+.loading-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: wait;
+    z-index: 10; /* Ensure it overlays form elements */
 }
 
 form:valid input[type='submit'] {
@@ -238,6 +262,18 @@ fieldset p:has(input:focus:valid)::after {
     opacity:1;
     scale: 1;
     transition-delay: .3s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 </style>
