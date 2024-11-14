@@ -1,3 +1,24 @@
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            setTimeout(() => {
+                const submitButton = document.querySelector("input[type='submit']");
+                document.querySelector("input[type='submit']").value = "Verzenden gelukt!"; // Change the button text
+                submitButton.disabled = true; 
+                
+                submitButton.style.backgroundColor = "var(--main-color-green)";
+                submitButton.style.color = "white";
+
+                document.querySelector("form").reset();
+            }, 1000);
+        });
+    });
+</script>
+
 <form>
 
     <fieldset class="questions">
