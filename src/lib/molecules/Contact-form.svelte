@@ -35,17 +35,17 @@
     </fieldset>
 
     <fieldset>
-        <div aria-hidden="true">
+        <div>
             <label for="name">Voornaam:</label>
             <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
         </div>
 
-        <div aria-hidden="true">
+        <div>
             <label for="lastname">Achternaam:</label>
             <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required/>
         </div>
 
-        <div aria-hidden="true">
+        <div>
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required/>
         </div>
