@@ -35,20 +35,20 @@
     </fieldset>
 
     <fieldset>
-        <p>
+        <div aria-hidden="true">
             <label for="name">Voornaam:</label>
             <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
-        </p>
+        </div>
 
-        <p>
+        <div aria-hidden="true">
             <label for="lastname">Achternaam:</label>
             <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required/>
-        </p>
+        </div>
 
-        <p>
+        <div aria-hidden="true">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required/>
-        </p>
+        </div>
 
         <label for="message">
             Stel je vraag of vertel voor welke workshop je je wilt aanmelden!
@@ -226,14 +226,14 @@ textarea::after {
     z-index: 10;
 }
 
-p {
+div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     position: relative;
 }
 
-fieldset p::after {
+fieldset div::after {
     content: "";
     position: absolute;
     top: -0.15rem; /* Adjust to where you want the icon */
@@ -250,14 +250,14 @@ fieldset p::after {
     transition: all 0.5s cubic-bezier(.75,-0.5,0,1.75);
 }
 
-fieldset p:has(input:valid)::after {
+fieldset div:has(input:valid)::after {
     opacity: 1;
     scale: 1;
     transform: translateY(0);
 }
 
-fieldset p:has(input:focus)::after,
-fieldset p:has(input:focus:valid)::after {
+fieldset div:has(input:focus)::after,
+fieldset div:has(input:focus:valid)::after {
     transform: translateY(20%);
     opacity:1;
     scale: 1;
