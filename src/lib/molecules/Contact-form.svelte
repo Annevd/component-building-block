@@ -158,7 +158,7 @@ input[type='submit'].loading {
     right: 0;
     bottom: 0;
     cursor: wait;
-    z-index: 10; /* Ensure it overlays form elements */
+    z-index: 10;
 }
 
 form:valid input[type='submit'] {
@@ -209,23 +209,6 @@ textarea:focus {
 
 /* Form animated valid styling */
 
-input[type='text']::after,
-input[type='email']::after,
-textarea::after {
-    /* content: "🌱"; */
-    content: "";
-    position: absolute;
-    top: -1rem; /* Adjust to where you want the icon */
-    right: 10px; /* Adjust based on layout */
-    width: 35px;
-    height: 35px;
-    background-image: url('/src/lib/assets/plant.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 1;
-    z-index: 10;
-}
-
 div {
     display: flex;
     flex-direction: column;
@@ -236,8 +219,8 @@ div {
 fieldset div::after {
     content: "";
     position: absolute;
-    top: -0.15rem; /* Adjust to where you want the icon */
-    right: 10px; /* Adjust based on layout */
+    top: -0.15rem;
+    right: 10px;
     width: 40px;
     height: 40px;
     scale: 0.5;
