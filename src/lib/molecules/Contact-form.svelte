@@ -67,7 +67,7 @@ form {
     flex-direction: column;
     width: 100%;
     max-width: 35rem;
-    gap: 1rem;
+    gap: 1.25rem;
     color: var(--card-color-green);
     font-family: var(--sub-header-font);
 }
@@ -77,7 +77,10 @@ fieldset {
     flex-direction: column;
     border: none;
     gap: 0.5rem;
-    /* position: relative; */
+}
+
+fieldset:nth-of-type(2) {
+    gap: 1.5rem;
 }
 
 legend {
@@ -158,7 +161,7 @@ input[type='submit'].loading {
     right: 0;
     bottom: 0;
     cursor: wait;
-    z-index: 10;
+    z-index: 100;
 }
 
 form:valid input[type='submit'] {
