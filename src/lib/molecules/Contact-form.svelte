@@ -68,7 +68,7 @@ form {
     width: 100%;
     max-width: 35rem;
     gap: 1.25rem;
-    color: var(--card-color-green);
+    color: var(--text-color-green);
     font-family: var(--sub-header-font);
 }
 
@@ -144,11 +144,6 @@ input[type='submit'] {
     transition: ease-in 0.1s;
 }
 
-input[type='submit'].loading {
-    animation: pulse 0.8s infinite;
-    cursor: wait; 
-}
-
 .loading-overlay {
     position: relative;
 }
@@ -183,12 +178,21 @@ textarea {
     color: #545454;
 }
 
+/* form focus styling */
+
+input[type='text']:focus,
+input[type='email']:focus,
+textarea:focus {
+    outline: 2px solid #B37400;
+    background: lightgoldenrodyellow;
+}
+
 /* form focus valid  */
 
 input[type='text']:valid,
 input[type='email']:valid,
 textarea:valid {
-    outline: 2px solid var(--card-color-green);
+    outline: 2px solid var(--valid-color-green);
     background: #E8FFE8;
 }
 
@@ -199,15 +203,6 @@ input[type='email']:user-invalid,
 textarea:user-invalid {
     outline: 2px solid var(--invalid-color-red);
     /* background: #FFEFEF; */
-}
-
-/* form focus styling */
-
-input[type='text']:focus,
-input[type='email']:focus,
-textarea:focus {
-    outline: 2px solid #B37400;
-    background: lightgoldenrodyellow;
 }
 
 /* Form animated valid styling */
@@ -236,20 +231,6 @@ fieldset div::after {
     transition: all 0.5s cubic-bezier(.75,-0.5,0,1.75);
 }
 
-fieldset div:has(input:valid)::after {
-    opacity: 1;
-    scale: 1;
-    transform: translateY(0);
-}
-
-fieldset div:has(input:focus)::after,
-fieldset div:has(input:focus:valid)::after {
-    transform: translateY(20%);
-    opacity:1;
-    scale: 1;
-    transition-delay: .3s;
-}
-
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -259,6 +240,32 @@ fieldset div:has(input:focus:valid)::after {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Plant valid animation */
+
+    fieldset div:has(input:valid)::after {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
+    }
+
+    fieldset div:has(input:focus)::after,
+    fieldset div:has(input:focus:valid)::after {
+        transform: translateY(20%);
+        opacity:1;
+        scale: 1;
+        transition-delay: .3s;
+    }
+
+    /* Loading animation */
+
+    input[type='submit'].loading {
+        animation: pulse 0.8s infinite;
+        cursor: wait; 
     }
 }
 
