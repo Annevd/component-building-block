@@ -126,7 +126,7 @@ textarea {
     border-radius: var(--border-card);
     outline: none;
     /* box-shadow: 0px 2px 4px hsl(32 37% 39% / 1); */
-    outline: 1px solid #B37400;
+    outline: 1px solid var(--input-border-color);
     position: relative;
     z-index: 100;
 }

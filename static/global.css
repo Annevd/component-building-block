@@ -56,6 +56,8 @@ html {
 	--invalid-color-red: #ff0000;
 	--valid-color-green: #3c593e;
 
+	--input-border-color: #B37400;
+
 	--header-font: 'Poppins-Black', sans-serif;
 	--sub-header-font: 'Poppins-Bold', sans-serif;
 	--paragraph-font: 'Poppins-Medium', sans-serif;
@@ -72,6 +74,7 @@ html {
 		--main-color-beige: #1D1D1D;
 		--text-color-green: var(--text-color-white);
 		--valid-color-green: #3cc746 ;
+		--input-border-color: none;
 	}
 }
 
