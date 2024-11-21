@@ -20,7 +20,8 @@
 
     li {
         list-style: none;
-
+        container-type:inline-size; /* container query property */
+        container-name:card; /* container query property */
     }
 
     .card-container {
@@ -33,6 +34,24 @@
         background: var(--main-color-beige);
         border-radius: 1rem;
     }
+
+    @container card (width > 23rem){
+    .card-container {
+      flex-direction: row;
+      height: 14rem;
+    }
+    .card-container picture {
+        width: 40%;
+    }
+
+    .info-container {
+        gap: 0;
+    }
+
+    li picture {
+        max-height: none;
+    }
+}
 
     li picture,
 	li img {
