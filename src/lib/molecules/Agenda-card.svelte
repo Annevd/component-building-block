@@ -15,3 +15,80 @@
         </div>
     </div>
 </li>
+
+<style>
+
+    li {
+        list-style: none;
+
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: auto;
+        width: auto;
+        padding: 1rem;
+        background: var(--main-color-beige);
+        border-radius: 1rem;
+    }
+
+    li picture,
+	li img {
+		height: 100%;
+		width: 100%;
+        max-height: 13rem;
+        display: block; 
+	}
+
+    time {
+        display: block;
+    }
+
+	li img {
+		object-fit: cover;
+		border-radius: 1rem;
+	}
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        color: var(--main-color-brown);
+    }
+
+    h2 {
+        font-weight: bolder;
+    }
+
+    ul {
+        font-weight: bold;
+    }
+
+    a {
+        display: flex;
+		justify-content: center;
+		align-items: center;
+        gap: 0.5rem;
+        width: max-content;
+		border-radius: 2em;
+		padding: 0.2em 0.6em;
+		text-decoration: none;
+		font-size: 1em;
+        background: var(--card-color-green);
+		color: var(--text-color-white);
+    }
+
+    span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+    span svg {
+        height: 0.75rem;
+        width: auto;
+    }
+</style>
