@@ -1,7 +1,7 @@
 <li>
     <div class="card-container">
         <picture>
-            <img height=200 src="/src/lib/assets/workshop.webp" alt="">
+            <img height=200 src="workshop.webp" alt="">
         </picture>
         <div class="info-container">
             <h2>Stekjes maken</h2>
