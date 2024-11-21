@@ -7,9 +7,9 @@
 <h3>Decovar</h3> -->
 
 <main>
-    <!-- <section class='form'>
+    <section class='form'>
         <ContactForm/>
-    </section> -->
+    </section>
     <section class='card'>
         <AgendaCard/>
     </section>
@@ -41,6 +41,12 @@
                          "TRMF" 0, "TRMK" 0, "BLDB" 0, "WMX2" 0, "TRMB" 572, "TRMA" 0,
                          "SKLB" 656, "TRMG" 0, "TRME" 463;
     } */
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
 
     section.form {
         background: var(--main-color-beige);

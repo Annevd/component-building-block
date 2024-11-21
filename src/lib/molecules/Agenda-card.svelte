@@ -75,7 +75,7 @@ li img {
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
-    color: var(--main-color-brown);
+    color: var(--text-color-brown);
 }
 
 h2 {

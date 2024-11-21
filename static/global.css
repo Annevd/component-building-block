@@ -42,6 +42,9 @@ html {
 }
 
 :root {
+	--background-color-light: #fff;
+	--background-color-dark: #0d0d0d;
+
 	--main-color-green: #4e7141;
 	--main-color-beige: #f9e9c2;
 	--main-color-orange: #ff8d06;
@@ -53,6 +56,7 @@ html {
 	--text-color-white: #fff;
 	--text-color-black: #000;
 	--text-color-green: #3c593e;
+	--text-color-brown: #491b02;
 	--invalid-color-red: #ff0000;
 	--valid-color-green: #3c593e;
 
@@ -71,15 +75,18 @@ html {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--main-color-beige: #1D1D1D;
+		--main-color-beige: #212121;
 		--text-color-green: var(--text-color-white);
+		--text-color-brown: var(--text-color-white);
 		--valid-color-green: #3cc746 ;
 		--input-border-color: none;
+		--background-color-light: var(--background-color-dark);
 	}
 }
 
 body {
     height: 100dvh;
+	background: var(--background-color-light);
 }
 
 main {
