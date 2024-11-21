@@ -11,7 +11,9 @@
         <ContactForm/>
     </section>
     <section class='card'>
-        <AgendaCard/>
+        <ul>
+            <AgendaCard/>
+        </ul>
     </section>
 </main>
 
