@@ -17,97 +17,103 @@
 </li>
 
 <style>
+/* Base styles */
+li {
+    list-style: none;
+    container-type: inline-size; /* Container query property */
+    container-name: card;        /* Container query property */
+}
 
-    li {
-        list-style: none;
-        container-type:inline-size; /* container query property */
-        container-name:card; /* container query property */
-    }
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    width: auto;
+    padding: 1rem;
+    background: var(--main-color-beige);
+    border-radius: 1rem;
+}
 
+/* Layout voor grotere schermen met container queries */
+
+@container card (width > 23rem) {
     .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        height: auto;
-        width: auto;
-        padding: 1rem;
-        background: var(--main-color-beige);
-        border-radius: 1rem;
-    }
-
-    @container card (width > 23rem){
-    .card-container {
-      flex-direction: row;
-      height: 14rem;
+        flex-direction: row;
+        height: 14rem;
     }
     .card-container picture {
         width: 40%;
     }
-
     .info-container {
         gap: 0;
     }
-
     li picture {
         max-height: none;
     }
 }
 
-    li picture,
-	li img {
-		height: 100%;
-		width: 100%;
-        max-height: 13rem;
-        display: block; 
-	}
+/* Picture & image styles */
 
-    time {
-        display: block;
-    }
+li picture,
+li img {
+    height: 100%;
+    width: 100%;
+    max-height: 13rem;
+    display: block;
+}
 
-	li img {
-		object-fit: cover;
-		border-radius: 1rem;
-	}
+li img {
+    object-fit: cover;
+    border-radius: 1rem;
+}
 
-    .info-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1rem;
-        color: var(--main-color-brown);
-    }
+/* Info container styles */
 
-    h2 {
-        font-weight: bolder;
-    }
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--main-color-brown);
+}
 
-    ul {
-        font-weight: bold;
-    }
+h2 {
+    font-weight: bolder;
+}
 
-    a {
-        display: flex;
-		justify-content: center;
-		align-items: center;
-        gap: 0.5rem;
-        width: max-content;
-		border-radius: 2em;
-		padding: 0.2em 0.6em;
-		text-decoration: none;
-		font-size: 1em;
-        background: var(--card-color-green);
-		color: var(--text-color-white);
-    }
+ul {
+    font-weight: bold;
+}
 
-    span {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+time {
+    display: block;
+}
 
-    span svg {
-        height: 0.75rem;
-        width: auto;
-    }
+/* Button styles */
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+    border-radius: 2em;
+    padding: 0.2em 0.6em;
+    text-decoration: none;
+    font-size: 1em;
+    background: var(--card-color-green);
+    color: var(--text-color-white);
+}
+
+a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a span svg {
+    height: 0.75rem;
+    width: auto;
+}
 </style>
