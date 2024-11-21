@@ -1,5 +1,5 @@
 <script>
-	import { ContactForm } from '$lib/index.js';
+	import { ContactForm, AgendaCard } from '$lib/index.js';
 </script>
 
 <!-- <h1>Variable font test</h1>
@@ -7,7 +7,12 @@
 <h3>Decovar</h3> -->
 
 <main>
-    <ContactForm/>
+    <!-- <section class='form'>
+        <ContactForm/>
+    </section> -->
+    <section class='card'>
+        <AgendaCard/>
+    </section>
 </main>
 
 <style>
@@ -37,5 +42,8 @@
                          "SKLB" 656, "TRMG" 0, "TRME" 463;
     } */
 
+    section.form {
+        background: var(--main-color-beige);
+    }
 
 </style>
