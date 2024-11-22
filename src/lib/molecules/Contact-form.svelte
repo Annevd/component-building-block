@@ -222,7 +222,7 @@ fieldset div::after {
     width: 40px;
     height: 40px;
     scale: 0.5;
-    background-image: url('/src/lib/atoms/icons/plant.svg');
+    background-image: url('assets/plant.svg');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0;
@@ -232,9 +232,6 @@ fieldset div::after {
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
     50% {
         transform: scale(1.025);
     }
