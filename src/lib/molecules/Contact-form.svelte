@@ -222,7 +222,7 @@ fieldset div::after {
     width: 40px;
     height: 40px;
     scale: 0.5;
-    background-image: url('assets/plant.svg');
+    background-image: url('/assets/plant.svg');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0;
