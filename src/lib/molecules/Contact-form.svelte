@@ -37,23 +37,23 @@
     <fieldset>
         <div>
             <label for="name">Voornaam:</label>
-            <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
+            <input type="text" id="name" name="name" placeholder="Voer je voornaam in*" required/>
         </div>
 
         <div>
             <label for="lastname">Achternaam:</label>
-            <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required/>
+            <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in*" required/>
         </div>
 
         <div>
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required/>
+            <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in*" required/>
         </div>
 
         <label for="message">
             Stel je vraag of vertel voor welke workshop je je wilt aanmelden!
         </label>
-        <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht" required></textarea>
+        <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht*" required></textarea>
     </fieldset>
 
     <input type="submit" value="Verzenden" aria-label="Verzend formulier" class="{isLoading ? 'loading' : ''}"/>
