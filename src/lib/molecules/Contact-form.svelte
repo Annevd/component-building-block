@@ -2,28 +2,26 @@
     import { onMount } from "svelte";
     let isLoading = false;
 
-    onMount(() => {
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
+    function handleSubmit(event) {
+        event.preventDefault();
 
-            isLoading = true;
+        isLoading = true;
 
-            setTimeout(() => {
-                const submitButton = document.querySelector("button[type='submit']");
-                submitButton.textContent = "Verzenden gelukt!"; // Change the button text
-                isLoading = false; 
+        setTimeout(() => {
+            const submitButton = event.target.querySelector("button[type='submit']");
+            submitButton.textContent = "Verzenden gelukt!"; // Change the button text
+            isLoading = false;
 
-                submitButton.disabled = true; 
-                submitButton.style.backgroundColor = "var(--main-color-green)";
-                submitButton.style.color = "white";
+            submitButton.disabled = true;
+            submitButton.style.backgroundColor = "var(--main-color-green)";
+            submitButton.style.color = "white";
 
-                document.querySelector("form").reset();
-            }, 2000);
-        });
-    });
+            event.target.reset();
+        }, 2000);
+    }
 </script>
 
-<form class="{isLoading ? 'loading-overlay' : ''}">
+<form class="{isLoading ? 'loading-overlay' : ''}" on:submit={handleSubmit}>
 
     <fieldset class="questions">
         <legend>Reden voor contact:</legend>
