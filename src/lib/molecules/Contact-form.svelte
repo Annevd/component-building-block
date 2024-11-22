@@ -9,8 +9,8 @@
             isLoading = true;
 
             setTimeout(() => {
-                const submitButton = document.querySelector("input[type='submit']");
-                document.querySelector("input[type='submit']").value = "Verzenden gelukt!"; // Change the button text
+                const submitButton = document.querySelector("button[type='submit']");
+                submitButton.textContent = "Verzenden gelukt!"; // Change the button text
                 isLoading = false; 
 
                 submitButton.disabled = true; 
@@ -56,7 +56,7 @@
         <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht*" required></textarea>
     </div>
 
-    <input type="submit" value="Verzenden" aria-label="Verzend formulier" class="{isLoading ? 'loading' : ''}"/>
+    <button type="submit" value="Verzenden" class="{isLoading ? 'loading' : ''}">Verzenden</button>
 
 </form>
 
@@ -133,10 +133,9 @@ textarea {
     z-index: 100;
 }
 
-input[type='submit'] {
+button[type='submit'] {
     border-radius: 2rem;
     border: none;
-    cursor: not-allowed;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     font-size: 1rem;
@@ -165,18 +164,19 @@ input[type='submit'] {
 
 /* Submit button after valid form  */
 
-form:valid input[type='submit'] {
+form:valid button[type='submit'] {
     cursor: pointer;
     background: var(--main-color-green);
 }
 
-form:valid input[type='submit']:hover {
+form:valid button[type='submit']:hover {
     background-color: #4A8235;
     transform: scale(1.02);
 }
 
 input,
-textarea {
+textarea,
+button {
     font-family: var(--paragraph-font);
 }
 
@@ -268,7 +268,7 @@ div {
 
     /* Loading animation submit button */
 
-    input[type='submit'].loading {
+    button[type='submit'].loading {
         animation: pulse 0.8s infinite;
         cursor: wait; 
     }
