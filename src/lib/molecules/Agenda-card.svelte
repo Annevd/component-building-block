@@ -1,7 +1,8 @@
 <li>
     <div class="card-container">
         <picture>
-            <img height=200 src="workshop.webp" alt="" loading="lazy">
+            <source height=200 srcset="workshop.webp" type="image/webp"alt="" loading="lazy"/>
+            <img height=200 src="workshop.jpeg" alt="" loading="lazy">
         </picture>
         <div class="info-container">
             <h2>Stekjes maken</h2>
