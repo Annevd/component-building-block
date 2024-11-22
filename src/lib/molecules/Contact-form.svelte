@@ -34,7 +34,7 @@
             <input type="radio" id="workshop" name="contact-reason" value="workshop">
     </fieldset>
 
-    <fieldset>
+    <div class="field-container">
         <div>
             <label for="name">Voornaam:</label>
             <input type="text" id="name" name="name" placeholder="Voer je voornaam in*" required/>
@@ -54,7 +54,7 @@
             Stel je vraag of vertel voor welke workshop je je wilt aanmelden!
         </label>
         <textarea id="message" name="message" cols="30" rows="7" placeholder="Typ hier je bericht*" required></textarea>
-    </fieldset>
+    </div>
 
     <input type="submit" value="Verzenden" aria-label="Verzend formulier" class="{isLoading ? 'loading' : ''}"/>
 
@@ -79,7 +79,9 @@ fieldset {
     gap: 0.5rem;
 }
 
-fieldset:nth-of-type(2) {
+.field-container {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -214,7 +216,7 @@ div {
     position: relative;
 }
 
-fieldset div::after {
+.field-container div::after {
     content: "";
     position: absolute;
     top: -0.15rem;
@@ -244,14 +246,14 @@ fieldset div::after {
 
     /* Plant valid animation */
 
-    fieldset div:has(input:valid)::after {
+    .field-container div:has(input:valid)::after {
         opacity: 1;
         scale: 1;
         transform: translateY(0);
     }
 
-    fieldset div:has(input:focus)::after,
-    fieldset div:has(input:focus:valid)::after {
+    .field-container div:has(input:focus)::after,
+    .field-container div:has(input:focus:valid)::after {
         transform: translateY(20%);
         opacity:1;
         scale: 1;
