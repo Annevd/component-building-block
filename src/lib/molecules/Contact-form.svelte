@@ -146,6 +146,8 @@ input[type='submit'] {
     transition: ease-in 0.1s;
 }
 
+/* Loading cursor state */
+
 .loading-overlay {
     position: relative;
 }
@@ -160,6 +162,8 @@ input[type='submit'] {
     cursor: wait;
     z-index: 100;
 }
+
+/* Submit button after valid form  */
 
 form:valid input[type='submit'] {
     cursor: pointer;
@@ -233,6 +237,8 @@ div {
     transition: all 0.5s cubic-bezier(.75,-0.5,0,1.75);
 }
 
+/* Loading state submit button animation */
+
 @keyframes pulse {
     50% {
         transform: scale(1.025);
@@ -260,7 +266,7 @@ div {
         transition-delay: .3s;
     }
 
-    /* Loading animation */
+    /* Loading animation submit button */
 
     input[type='submit'].loading {
         animation: pulse 0.8s infinite;
