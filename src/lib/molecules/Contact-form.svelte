@@ -1,5 +1,4 @@
 <script>
-    import { onMount } from "svelte";
     let isLoading = false;
 
     function handleSubmit(event) {
