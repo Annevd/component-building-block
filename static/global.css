@@ -84,6 +84,17 @@ html {
 	}
 }
 
+@supports (color: light-dark(#fff, #0d0d0d)) {
+	:root {
+		--background-color: light-dark(#fff, #0d0d0d);
+		--main-color-beige: light-dark(#f9e9c2, #212121);
+		--text-color-green: light-dark(#3c593e, #fff);
+		--text-color-brown: light-dark(#491b02, #fff);
+		--valid-color-green: light-dark(#3c593e, #3cc746);
+		--input-border-color: light-dark(#B37400, none);
+	}
+}
+
 body {
     height: 100dvh;
 	background: var(--background-color-light);
